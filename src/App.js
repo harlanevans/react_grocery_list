@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import List from './List';
 import GroceryForm from './GroceryForm';
 import Footer from './Footer';
+import './App.css';
 
 class App extends Component {
 
@@ -41,24 +42,36 @@ class App extends Component {
 
   visibleItems = () => {
     const { groceries, filter } = this.state;
-    switch(filter) {
+    switch (filter) {
       case 'Active':
-        return groceries.filter( t => !t.complete )
+        return groceries.filter(t => !t.complete)
       case 'Complete':
-        return groceries.filter( t=> t.complete )
+        return groceries.filter(t => t.complete)
       default:
         return groceries;
     }
   }
-  
+
   render() {
     const { groceries, filter } = this.state;
 
     return (
-      <div>
-        <GroceryForm addItem={this.addItem} />
-        <List name="Grocery List" items={this.visibleItems()} groceryClick={this.handleClick}/>
-        <Footer filter={filter} setFilter={this.setFilter} />
+      <div className="css">
+        
+        <form className='add-item'>
+          <GroceryForm addItem={this.addItem} />
+        </form>
+
+        <div>
+          <List name="Grocery List" 
+          items={this.visibleItems()} 
+          groceryClick={this.handleClick} />
+        </div>
+
+        <div>
+          <Footer filter={filter} setFilter={this.setFilter} />
+        </div>
+
       </div>
     );
   }

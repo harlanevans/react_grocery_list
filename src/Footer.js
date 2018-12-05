@@ -4,7 +4,7 @@ const styles = {
   link: { 
     cursor: 'pointer', 
     textDecoration: 'underline', 
-    color: 'blue',
+    color: 'white',
     marginLeft: '5px',
     marginRight: '5px',
   }
@@ -18,9 +18,9 @@ const filterLink = (current, name, setFilter) => {
 }
 
 const Footer = ({ filter, setFilter }) => (
-  <div>
+  <footer className='footer-stuff'>
     { ['All', 'Active', 'Complete'].map( f => filterLink(filter, f, setFilter) ) }
-  </div>
+  </footer>
 )
 
 export default Footer;

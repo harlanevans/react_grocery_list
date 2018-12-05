@@ -18,7 +18,7 @@ class GroceryForm extends React.Component {
     const {name} = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="submit-form" onSubmit={this.handleSubmit}>
         <input 
         value={name}
         name='name'

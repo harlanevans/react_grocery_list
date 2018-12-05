@@ -3,7 +3,7 @@ import Grocery from './Grocery';
 
 const List = ({items, name, groceryClick}) => (
   <div>
-    <h2>{ name }</h2>
+    <h1 className="title">{ name }</h1>
     <ul>
       { items.map(item => <Grocery key={item.id} {...item} groceryClick={groceryClick} />) }
     </ul>
